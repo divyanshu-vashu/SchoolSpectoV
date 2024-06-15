@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Admission.css'; 
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 function Admission() {
   return (

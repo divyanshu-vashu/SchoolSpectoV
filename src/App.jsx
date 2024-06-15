@@ -1,12 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+
+
+import Navbar from "./component/Navbar.jsx";
+import Hero from "./component/Hero.jsx";
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdmissionForm from "./pages/Admission.jsx";
 import BlogPage from "./pages/Blog.jsx";
 import GalleryPage from "./pages/Gallery.jsx";
-
 import './index.css';
 
 

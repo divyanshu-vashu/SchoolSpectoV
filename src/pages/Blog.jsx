@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Blog.css'; 
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 function Blog() {
   return (
