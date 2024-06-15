@@ -1,0 +1,81 @@
+body {
+  margin: 0; /* Remove default margin */
+}
+
+.navbar {
+  position: fixed; /* Fixed position to stick to the top */
+  width: 100%; /* Full width */
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  margin-right: 10px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0; /* Remove default margin */
+  
+  padding-left: 85%;
+}
+
+.navbar-item {
+  margin-left: 20px; /* Adjust margin between items */
+  position: relative; /* Required for absolute positioning of dropdown menu */
+}
+
+.navbar-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #007bff;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position dropdown menu below the navbar item */
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navbar-item:hover .dropdown-menu {
+  display: block; /* Show dropdown menu when hovering over navbar item */
+}
+
+.dropdown-item {
+  padding: 10px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
