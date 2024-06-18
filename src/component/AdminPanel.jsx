@@ -43,24 +43,24 @@ const AdminPanel = () => {
 
   return (
     <div>
-        <CustomNavbar/>
-    <div className='admin-panel-container'>
-    <div className="admin-panel">
-      <h2 className='admin-heading'>Admin Panel</h2>
-      <div className="admin-notices-list">
-        {notices.map((notice) => (
-          <div key={notice.id} className="admin-notice-item">
-            <p className='admin-notice-content'>{notice.content}</p>
-            <div>
-              <Link to={`/admin/update/${notice.id}`} className="admin-button">Update</Link>
-              <button onClick={() => handleDeleteNotice(notice.id)} className="admin-button">Delete</button>
-            </div>
+      <CustomNavbar />
+      <div className='admin-panel-container'>
+        <div className="admin-panel">
+          <h2 className='admin-heading'>Admin Panel</h2>
+          <div className="admin-notices-list">
+            {notices.map((notice) => (
+              <div key={notice.id} className="admin-notice-item">
+                <p className='admin-notice-content'>{notice.content}</p>
+                <div>
+                  <Link to={`/admin/update/${notice.id}`} className="admin-button">Update</Link>
+                  <button onClick={() => handleDeleteNotice(notice.id)} className="admin-button">Delete</button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+          <Link to="/admin/create" className="admin-button">Create Notice</Link>
+        </div>
       </div>
-      <Link to="/admin/create" className="admin-button">Create Notice</Link>
-    </div>
-    </div>
     </div>
   );
 };

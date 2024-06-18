@@ -8,13 +8,15 @@ const Account = () => {
   return (
     <div>
       {currentUser ? (
-        currentUser.email === 'admin@pps.com' ? (
+        currentUser.email === import.meta.env.VITE_FIREBASE_ADMIN_EMAIL ? (
           <AdminPanel />
         ) : (
           <p>Email: {currentUser.email}</p>
         )
       ) : (
+        <div>
         <p>Please log in to view account details.</p>
+        </div>
       )}
     </div>
   );
