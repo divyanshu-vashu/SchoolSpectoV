@@ -53,11 +53,19 @@
   }
   
   .notice-item {
+    height: fit-content;
+    width: auto;
     display: flex;
     flex-wrap: wrap;
+    /* background-color: transparent; */
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff78;
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }
   
   .notice-item:last-child {

@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+/* :root {
+  --primary-bg:#f8f8f8;
+  --secondary-bg:#dcdcdc;
+  --primary-text:#1e1e1e;
+  --secondary-text:#999999;
+  --accent:#fda300; 
+} */
+
+/* *
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+} */
+  
 .logo {
   height: 6em;
   padding: 1.5em;

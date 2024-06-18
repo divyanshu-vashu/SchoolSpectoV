@@ -1,5 +1,3 @@
-
-
 import Navbar from "./component/Navbar.jsx";
 import Hero from "./component/Hero.jsx";
 import React from 'react';
@@ -15,14 +13,20 @@ import slide3 from "./assets/slide3.jpg";
 import EventCalendar from "./component/EventCalendar.jsx";
 
 import './index.css';
+// import "./App.css";
+import LoginPage from "./pages/LoginPage.jsx";
+import SignupPage from "./pages/SignupPage.jsx";
+import Account from "./pages/Account.jsx";
+import UpdateNotice from "./pages/UpdateNotice.jsx";
+import CreateNotice from "./pages/CreateNotice.jsx";
 
 
-const notices = [
-  { date: '2024-06-20', content: 'School will be closed for summer vacation from June 21 to July 5.' },
-  { date: '2024-06-15', content: 'Annual Sports Day will be held on June 25.' },
-  { date: '2024-06-10', content: 'Parent-Teacher meeting on June 15.' },
-  { date: '2024-07-30', content: 'Summer vacation Ends, Next term commence.' },
-];
+// const notices = [
+//   { date: '2024-06-20', content: 'School will be closed for summer vacation from June 21 to July 5.' },
+//   { date: '2024-06-15', content: 'Annual Sports Day will be held on June 25.' },
+//   { date: '2024-06-10', content: 'Parent-Teacher meeting on June 15.' },
+//   { date: '2024-07-30', content: 'Summer vacation Ends, Next term commence.' },
+// ];
 
 const images = [
   slide1,slide2,slide3,
@@ -34,9 +38,14 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/admission" element={<AdmissionForm />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/admin/create" element={<CreateNotice />}/>
+        <Route path="/admin/update/:id" element={<UpdateNotice/>} />
       </Routes>
     </BrowserRouter>
   );
@@ -48,7 +57,7 @@ const MainLayout = () => {
       <div className=''>
         <Navbar />
         <Carousel images={images}/>
-        <EventCalendar notices={notices} />
+        <EventCalendar/>
       </div>
       
       
