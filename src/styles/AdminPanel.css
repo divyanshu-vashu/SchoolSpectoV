@@ -1,0 +1,74 @@
+/* src/styles/AdminPanel.css */
+
+.admin-panel-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+}
+
+.admin-panel {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: #ebebeb;
+    width: fit-content;
+    min-width: 60vw;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .admin-heading
+  {
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .admin-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .admin-notice-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .admin-notice-item p {
+    margin: 0;
+    margin-right: 50px;
+  }
+  
+  .admin-notices-list {
+    margin-bottom: 20px;
+  }
+
+  .admin-notice-content
+  {
+    margin-right: 50px;
+  }
+  

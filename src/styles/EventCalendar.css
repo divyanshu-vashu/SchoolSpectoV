@@ -1,0 +1,110 @@
+/* Noticeboard.css */
+.noticeboard-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('../assets/texture.jpg');
+    background-size: cover;
+    background-position: center;
+    border: solid rgb(176, 133, 76) 5px ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* .noticeboard-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/texture-wooden-boards.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  } */
+  
+  .notice_heading {
+    display: flex;
+    font-size: larger;
+    font-weight: 600;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    background-color: #f9f9f980;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+
+  }
+  
+  .notice_heading img {
+    width: 50px;
+  }
+  
+  .notice-item {
+    height: fit-content;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: transparent; */
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff78;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .notice-item:last-child {
+    border-bottom: none;
+  }
+  
+  .notice-date {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .notice-content {
+    flex: 1;
+    margin-left: 20px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  /* Glowing border effect */
+   /* .notice_heading::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, transparent, rgba(255, 217, 0, 0.2), transparent);
+    background-size: 200% 200%;
+    animation: glowing-border 3s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes glowing-border {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 200%;
+    }
+  } */

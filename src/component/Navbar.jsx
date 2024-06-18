@@ -1,11 +1,15 @@
 import React from "react";
-import "../styles/Navbar.css"; // Import your custom CSS file for Navbar styling
+import { Link } from "react-router-dom";
+import { useAuth } from '../contexts/AuthContext'; // Adjust the import path as necessary
+import "../styles/Navbar.css";
 
 function CustomNavbar() {
+  const { currentUser, logout } = useAuth();
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#" className="navbar-brand">
+        <Link to={'/'} className="navbar-brand">
           <img
             src="/logo.svg"
             width="50"
@@ -14,7 +18,7 @@ function CustomNavbar() {
             alt="Prakash Play School logo"
           />
           Prakash Play School
-        </a>
+        </Link>
         
         <ul className="navbar-menu">
           <li className="navbar-item">
@@ -34,6 +38,21 @@ function CustomNavbar() {
               <li><a href="#" className="dropdown-item">Fee</a></li>
             </ul>
           </li>
+          {currentUser ? (
+            <li className="navbar-item dropdown">
+              <label htmlFor="userDropdown" className="navbar-link">
+                {currentUser.email} {/* Display the username */}
+              </label>
+              <ul className="dropdown-menu">
+                <li><a href="/account" className="dropdown-item">Account Details</a></li>
+                <li><button onClick={logout} className="dropdown-item signout_btn">Sign Out</button></li>
+              </ul>
+            </li>
+          ) : (
+            <li className="navbar-item">
+              <a href="/login" className="navbar-link">Login</a>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
