@@ -22,35 +22,34 @@ function CustomNavbar() {
         
         <ul className="navbar-menu">
           <li className="navbar-item">
-            <a href="/admission" className="navbar-link">Admission</a>
+            <Link to="/admission" className="navbar-link">Admission</Link>
           </li>
           <li className="navbar-item">
-            <a href="/blog" className="navbar-link">Blog</a>
+            <Link to="/blog" className="navbar-link">Blog</Link>
           </li>
           <li className="navbar-item">
-            <a href="/gallery" className="navbar-link">Gallery</a>
+            <Link to="/gallery" className="navbar-link">Gallery</Link>
           </li>
           <li className="navbar-item dropdown">
-            <label htmlFor="navbarDropdown" className="navbar-link">About</label>
-            
+            <span className="navbar-link">About</span>
             <ul className="dropdown-menu">
-              <li><a href="#" className="dropdown-item">Action</a></li>
-              <li><a href="#" className="dropdown-item">Fee</a></li>
+              <li><Link to="#" className="dropdown-item">Action</Link></li>
+              <li><Link to="#" className="dropdown-item">Fee</Link></li>
             </ul>
           </li>
           {currentUser ? (
             <li className="navbar-item dropdown">
-              <label htmlFor="userDropdown" className="navbar-link">
+              <span className="navbar-link">
                 {currentUser.email} {/* Display the username */}
-              </label>
+              </span>
               <ul className="dropdown-menu">
-                <li><a href="/account" className="dropdown-item">Account Details</a></li>
+                <li><Link to="/account" className="dropdown-item">Account Details</Link></li>
                 <li><button onClick={logout} className="dropdown-item signout_btn">Sign Out</button></li>
               </ul>
             </li>
           ) : (
             <li className="navbar-item">
-              <a href="/login" className="navbar-link">Login</a>
+              <Link to="/login" className="navbar-link">Login</Link>
             </li>
           )}
         </ul>
