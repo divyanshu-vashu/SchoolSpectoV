@@ -34,7 +34,9 @@ const EventCalendar = () => {
 
   return (
     <div className="noticeboard-container">
-      <h1 className='notice_heading'><img src={noticeIcon} alt="Notice Icon" />NoticeBoard</h1>
+      <h1 className='notice_heading'>
+        <img src={noticeIcon} alt="Notice Icon" /> NoticeBoard
+      </h1>
       {sortedNotices.map((notice) => (
         <div key={notice.id} className="notice-item">
           <div className="notice-date">{new Date(notice.date).toLocaleDateString()}</div>

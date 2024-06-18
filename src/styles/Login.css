@@ -78,7 +78,7 @@ form input
     color: #1e1e1e;
 }
 
-form button
+.login-btn
 {
     margin-top: 25px;
     width: fit-content;

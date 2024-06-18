@@ -49,7 +49,7 @@ const SignUp = () => {
           <input type="password" name='password' placeholder='Password' value={user.password} onChange={handleInputs} />
           <label htmlFor="repwd">Re-Enter Password</label>
           <input type="password" name='repwd' placeholder='Re-type Password' value={user.repwd} onChange={handleInputs} />
-          <button type='submit' name='signup' value="register" onClick={validate}>Sign Up</button>
+          <button type='submit' name='signup' value="register" onClick={validate} className='signup-btn'>Sign Up</button>
         </form>
         <div className='signin-bottom'>
           <span>Already have an account? <span><Link to='/login' className='login'>Log In</Link></span></span>
