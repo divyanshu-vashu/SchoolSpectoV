@@ -19,6 +19,9 @@ import SignupPage from "./pages/SignupPage.jsx";
 import Account from "./pages/Account.jsx";
 import UpdateNotice from "./pages/UpdateNotice.jsx";
 import CreateNotice from "./pages/CreateNotice.jsx";
+import Events from './component/Events';
+import School from './component/School';
+import Workplace from './component/Workplace';
 
 import './index.css';
 
@@ -59,6 +62,9 @@ const MainLayout = ({ aboutUsRef, feesRef }) => {
       <Carousel images={images} />
       <EventCalendar />
       <Hero />
+      <Events />
+      <School />
+      <Workplace />
       <div ref={aboutUsRef}>
         <AboutUs />
       </div>
