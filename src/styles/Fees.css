@@ -1,0 +1,44 @@
+.landing-page {
+    background-color: #ffffff;
+}
+
+.fee-section {
+    text-align: center;
+    padding: 70px 200px;
+    background-color: #e6ffe6; /* Light green background */
+}
+
+.fee-section h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.fee-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.fee-table th,
+.fee-table td {
+    border: 1px solid #d6a7a7;
+    padding: 12px;
+    text-align: center;
+}
+
+.fee-table th {
+    background-color: #94f094; /* Light green background */
+    color: #333;
+    font-weight: bold;
+}
+
+.fee-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.fee-table tr:hover {
+    background-color: #f1f1f1;
+}
