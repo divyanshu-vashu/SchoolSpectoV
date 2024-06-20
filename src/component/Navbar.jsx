@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext'; // Adjust the import path as necessary
 import "../styles/Navbar.css";
 
-function CustomNavbar() {
+function CustomNavbar({ onScrollToSection, aboutUsRef, feesRef }) {
   const { currentUser, logout } = useAuth();
 
   return (
@@ -33,8 +33,12 @@ function CustomNavbar() {
           <li className="navbar-item dropdown">
             <span className="navbar-link">About</span>
             <ul className="dropdown-menu">
-              <li><Link to="#" className="dropdown-item">Action</Link></li>
-              <li><Link to="#" className="dropdown-item">Fee</Link></li>
+              <li>
+                <button className="dropdown-item" onClick={() => onScrollToSection(aboutUsRef)}>Action</button>
+              </li>
+              <li>
+                <button className="dropdown-item" onClick={() => onScrollToSection(feesRef)}>Fee</button>
+              </li>
             </ul>
           </li>
           {currentUser ? (
