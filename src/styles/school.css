@@ -5,7 +5,7 @@ body {
 }
 
 main {
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@ main {
 
 section {
     width: 100%;
-    padding: 20px;
+    padding: 2rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     opacity: 0;
     transform: translateY(20px);
@@ -74,7 +74,8 @@ section h1 {
 }
 
 #school h3 {
-    margin: 50px 50px 50px 700px;
+    padding: 5rem;
+    padding-top: 6rem;
     font-weight: 100;
     letter-spacing: 3px;
     font-size: 16px;
@@ -83,8 +84,7 @@ section h1 {
 
 #school div {
     display: flex;
-    gap: 5px;
-    margin-left: 150px;
+    gap:1rem;
 }
 
 #school div img {
@@ -92,13 +92,13 @@ section h1 {
     width: 440px;
     height: 330px;
     gap: 20px;
-    object-fit: fill;
+    object-fit: fit;
     cursor: pointer;
 }
 
 #school div img:hover {
-    transform: scale(0.9);
-    transition: all 0.7s ease-in-out;
+    transform: scale(0.96);
+    transition: all 500ms ease-in-out;
 }
 
 .workplace {

@@ -90,3 +90,7 @@ html, body {
     }
   }
   
+#events{
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
