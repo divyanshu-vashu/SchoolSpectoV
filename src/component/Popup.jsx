@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const Admission = () => {
+const Popup = ({ show, onClose }) => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -71,6 +71,7 @@ const Admission = () => {
             DOB: "",
             city: "",
             number: "",
+            message: "",
           });
         },
         (error) => {
@@ -81,38 +82,46 @@ const Admission = () => {
       );
   };
 
+  if (!show) return null;
+
   return (
-    <div className="align-center mt-24 flex h-full w-screen justify-center">
-      <div className="w-100">
-        <h1 className="text-4xl font-bold">Admission Enquiry Form</h1>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
+      <div className="relative mt-[15vh] rounded-lg bg-white p-6">
+        <button
+          onClick={onClose}
+          className="absolute right-2 top-2 font-bold text-black"
+        >
+          X
+        </button>
+        <h1 className="text-2xl font-bold">Enquire Now!</h1>
         <h2>Fill out this form and we'll contact you!</h2>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-6 flex flex-col gap-2"
+          className="mt-2 flex flex-col gap-2"
         >
           <label className="flex flex-col">
-            <span className="mb-2 text-black">Child's Date of Birth*</span>
+            <span className="text-black">Child's Date of Birth*</span>
             <input
               type="date"
               name="DOB"
               value={form.DOB}
               onChange={handleChange}
               placeholder="What's your child's age?"
-              className="bg-tertiary w-[24rem] rounded-lg border-none px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary rounded-lg border-none px-4 py-2 text-black outline-none placeholder:text-black"
               required
             />
             {errors.DOB && <span className="text-red-500">{errors.DOB}*</span>}
           </label>
           <label className="flex flex-col">
-            <span className="mb-2 text-black">Your Name*</span>
+            <span className="text-black">Your Name*</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="bg-tertiary rounded-lg border-none px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary rounded-lg border-none px-4 py-2 text-black outline-none placeholder:text-black"
               required
             />
             {errors.name && (
@@ -120,14 +129,14 @@ const Admission = () => {
             )}
           </label>
           <label className="flex flex-col">
-            <span className="mb-2 text-black">Your Mobile Number*</span>
+            <span className="text-black">Your Mobile Number*</span>
             <input
               type="number"
               name="number"
               value={form.number}
               onChange={handleChange}
               placeholder="Your Mobile Number"
-              className="bg-tertiary rounded-lg border-none px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary rounded-lg border-none px-4 py-2 text-black outline-none placeholder:text-black"
               required
             />
             {errors.number && (
@@ -135,45 +144,41 @@ const Admission = () => {
             )}
           </label>
           <label className="flex flex-col">
-            <span className="mb-2 text-black">Email*</span>
+            <span className="text-black">Email*</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Your Email ID"
-              className="bg-tertiary rounded-lg border-none px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary rounded-lg border-none px-4 py-2 text-black outline-none placeholder:text-black"
               required
             />
             {errors.email && (
               <span className="text-red-500">{errors.email}*</span>
             )}
           </label>
-          <label className="flex flex-col w-fill">
-            <span className="mb-2 text-black  w-fill">Your City*</span>
+          <label className="flex flex-col">
+            <span className="text-black">Your City*</span>
             <input
               type="text"
               name="city"
               value={form.city}
               onChange={handleChange}
               placeholder="Your City"
-              className="bg-tertiary  rounded-lg b px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary rounded-lg px-4 py-2 text-black outline-none placeholder:text-black"
               required
             />
-            {errors.city && (
-              <span className="text-red-500">{errors.city}</span>
-            )}
+            {errors.city && <span className="text-red-500">{errors.city}</span>}
           </label>
           <label className="flex flex-col">
-            <span className="mb-2 text-black">
-              Any questions or extra details?
-            </span>
+            <span className="text-black">Any questions or extra details?</span>
             <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="Your Message"
-              className="bg-tertiary placeholder:text-md border-1 rounded-lg border-solid border-black bg-[#dcdcdc] px-6 py-4 text-black outline-none placeholder:text-black"
+              className="bg-tertiary placeholder:text-md border-1 rounded-lg border-solid border-black bg-[#dcdcdc] px-4 py-2 text-black outline-none placeholder:text-black"
             />
             {errors.message && (
               <span className="text-red-500">{errors.message}</span>
@@ -181,19 +186,14 @@ const Admission = () => {
           </label>
           <button
             type="submit"
-            className="bg-tertiary w-fill text-md shadow-primary rounded-xl bg-gray-400 px-8 py-3 text-[1.5rem] font-bold text-black shadow-md"
+            className="bg-tertiary text-md shadow-primary rounded-xl bg-gray-400 px-6 py-2 text-[1.5rem] font-bold text-black shadow-md"
           >
             {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
-      {/* <div className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
-        <div className="contact-img">
-          <img src="/c2.png" alt="Contact Image" />
-        </div>
-      </div> */}
     </div>
   );
 };
 
-export default Admission;
+export default Popup;

@@ -1,7 +1,7 @@
+import React, { useRef, useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar.jsx";
 import Hero from "./component/Hero.jsx";
-import React, { useRef } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdmissionForm from "./pages/Admission.jsx";
 import BlogPage from "./pages/Blog.jsx";
 import GalleryPage from "./pages/Gallery.jsx";
@@ -22,9 +22,8 @@ import CreateNotice from "./pages/CreateNotice.jsx";
 import Events from './component/Events';
 import School from './component/School';
 import Workplace from './component/Workplace';
-
+import Popup from './component/Popup';
 import './index.css';
-
 
 const images = [
   slide1, slide2, slide3,
@@ -33,9 +32,14 @@ const images = [
 const App = () => {
   const aboutUsRef = useRef(null);
   const feesRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(true);
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -52,6 +56,7 @@ const App = () => {
         <Route path="/admin/create" element={<CreateNotice />} />
         <Route path="/admin/update/:id" element={<UpdateNotice />} />
       </Routes>
+      <Popup show={showPopup} onClose={handlePopupClose} />
     </BrowserRouter>
   );
 };
