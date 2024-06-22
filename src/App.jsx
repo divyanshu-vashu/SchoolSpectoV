@@ -25,6 +25,7 @@ import Workplace from './component/Workplace';
 
 import './index.css';
 
+
 const images = [
   slide1, slide2, slide3,
 ];
