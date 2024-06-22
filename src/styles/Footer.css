@@ -16,8 +16,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
-    max-width: 1200px;
+    padding: 0 20px;;
     margin: 0 auto;
   }
   
@@ -91,3 +90,7 @@ html, body {
     }
   }
   
+#events{
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
